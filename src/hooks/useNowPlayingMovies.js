@@ -10,7 +10,7 @@ const useNowPlayingMovies = ()=>{
   const getNowPlayingMovies = async ()=> {
     const data = await fetch("https://api.themoviedb.org/3/movie/now_playing?page=1",API_OPTIONS)
     const json = await data.json()
-    console.log(json.results)
+    
 //api will be called two times because of react strict-mode(by default made by react in index.js but that too in local storage only, in production side, it happens only once.)
 
     dispatch(addNowPlayingMovies(json.results))
@@ -21,3 +21,5 @@ const useNowPlayingMovies = ()=>{
   },[])
 }
 export default useNowPlayingMovies
+
+//seperation of concern : everything responsible for only particular thing, readable, testable, modular etcc
