@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser, removeUser } from '../utils/userSlice';
+import { LOGO, USER_AVATAR } from '../utils/constants';
 export const Header = () => {
 const navigate = useNavigate()
 const user = useSelector((store) => store.user)
@@ -23,7 +24,7 @@ const user = useSelector((store) => store.user)
   const dispatch = useDispatch()
   useEffect(()=>{
 
-    onAuthStateChanged(auth, (user) => {
+   const unsubscribe = onAuthStateChanged(auth, (user) => {
        if (user) {
   
   const {uid,email,displayName, photoURL} = user;
@@ -37,16 +38,20 @@ const user = useSelector((store) => store.user)
  navigate("/")
 }
 });  
+//this will be called when component unmounts.
+  return ()=> {
+    unsubscribe()
+  }
 },[])
   return (
     
     <div className='absolute  w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
 
-    <img  className='w-44' src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo"/>
+    <img  className='w-44' alt="logo" src={LOGO}/>
 
    
   { user && <div className='flex p-2'>
-    <img  className='w-12 h-12 ' src = "https://avatars.githubusercontent.com/u/91929770?v=4" alt = "user-icon"></img>
+    <img  className='w-12 h-12 ' src = {USER_AVATAR} alt = "user-icon"></img>
     <button onClick={handleSignOut} className='font-bold text-white p-4'>Sign Out</button>
    </div> } 
    </div> 

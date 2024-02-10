@@ -18,6 +18,8 @@
 - Update Profile API call
 - Bugfix : Sign up user displayName and profile picture update
 - Bugfix : If the user is not logged in Redirect/browse to login page and  vice-versa
+- unsubscribed to the onAuthstateChange callback
+- Add hard-coded values to the constants files
 
 
 
