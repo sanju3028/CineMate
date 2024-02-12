@@ -17,3 +17,5 @@ export const USER_AVATAR =
 
  export const SUPPORTED_LANGUAGES = [{identifier:"en",name:"English"},
  {identifier:"hindi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}]
+
+  export const OPENAI_KEY = "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"
