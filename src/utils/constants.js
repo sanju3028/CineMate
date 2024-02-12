@@ -8,7 +8,7 @@ export const USER_AVATAR =
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjM2FiOTM2NDVhZjdlOWIxNjhlOGFiZmMyOTVjMjA5NCIsInN1YiI6IjY1Yzc3ZjgwZTI5NWI0MDE0OGY3ZjBiOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kTcMWNA_knVDqMaUzD0tfmMKL32ZlwehOc0ZTXRvNgM"
+      Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
     },
   };
  export const IMG_CDN = "https://image.tmdb.org/t/p/w500/"
@@ -18,4 +18,4 @@ export const USER_AVATAR =
  export const SUPPORTED_LANGUAGES = [{identifier:"en",name:"English"},
  {identifier:"hindi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}]
 
-  export const OPENAI_KEY = "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"
+  export const OPENAI_KEY = "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"

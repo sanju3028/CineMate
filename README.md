@@ -40,6 +40,13 @@
 - GPT search bar
 - Multi-language Feature
 - Integrate GPT API
+- Fetched GPT movie suggestions
+- craeted GPT slice
+- Reused movieList component
+- Memoization
+- adding .env file
+- add .env to gitignore
+- responsiveness
 
 
 

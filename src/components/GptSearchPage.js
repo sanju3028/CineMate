@@ -7,7 +7,7 @@ import { GptMovieSuggestions } from './GptMovieSuggestions'
 
 export const GptSearchPage = () => {
   return (
-    <div>
+    <div className=''>
       <div className='fixed -z-10'>
         <img src = {BG_URL} alt = "logo"/>
       </div>
